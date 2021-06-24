@@ -1,4 +1,4 @@
-[![<habouche>](https://circleci.com/gh/habouche/ml_microservice_in_kubernetes.svg?style=svg)](https://circleci.com/gh/circleci/ml_microservice_in_kubernetes)
+[![<habouche>](https://circleci.com/gh/habouche/ml_microservice_in_kubernetes.svg?style=svg)](https://app.circleci.com/pipelines/github/habouche/ml_microservice_in_kubernetes)
 
 ## Project Overview
 
