@@ -2,26 +2,21 @@
 
 ## Project Overview
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+Given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. This project is about operationalizing a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+### Steps to build and test the project
 
-### Project Tasks
+The files in this project are :
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
-
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
-
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
-
----
+* .crcleci/config.yml : CI configuration file used in circleci for auromatic source code integration
+* model_data : data used to train the prediction model
+* app.py : the flask application that serve the prediction
+* Dockerfile : Used to build a docker image for this project
+* make_prediction.sh : posts the features to the flask API to make a prediction
+* Makefile : steps to setup the project(includes setting up a python venv, intalling dependencies and linting source code)
+* run_docker.sh : builds project's docker image and runs it in a container
+* upload_docker.sh: tags and uploads the created image to a docker hub registry
+* run_kubernetes.sh : deploys the image into a local kubernetes cluster (use minikube and kubectl) 
 
 ## Setup the Environment
 
@@ -33,6 +28,8 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
 3. Run in Kubernetes:  `./run_kubernetes.sh`
+4. Make prediction : `./make_prediction.sh`
+
 
 ### Kubernetes Steps
 
