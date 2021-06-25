@@ -10,7 +10,7 @@ dockerpath="ferhab1994/ml-prediction"
 # Step 2
 # Run the Docker Hub container with kubernetes
 #kubectl run flaskprediction --image=$dockerpath --port=80
-sudo docker login
+#docker login
 kubectl run flaskprediction --image=$dockerpath:1.0 --port=80 --labels app=flaskprediction
 
 
